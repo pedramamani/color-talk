@@ -10,8 +10,8 @@ NAME = os.path.basename(DIR)
 ASSETS_DIR = DIR / 'assets'
 
 floatGroup = lambda name: f'(?P<{name}>[0-9.E-]*)'
-FORMAT_2 = f"({floatGroup('w')} {floatGroup('x')}\n)+$"
-FORMAT_4 = f"({floatGroup('w')} {floatGroup('x')} {floatGroup('y')}( {floatGroup('z')})?\n)+$"
+FORMAT_2 = f"({floatGroup('w')},{floatGroup('x')}\n)+$"
+FORMAT_4 = f"({floatGroup('w')},{floatGroup('x')},{floatGroup('y')}(,{floatGroup('z')})?\n)+$"
 
 
 def extractData(filePath, format_):
